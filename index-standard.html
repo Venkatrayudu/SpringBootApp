@@ -1,0 +1,723 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sample Indentity in Project</title>
+    <style type="text/css">
+      body {
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>Sample Indentity in Project</h1>
+    <div class="app-desc"><p>The identity API provides standardized mechanism for identity management such as creation, update, retrieval, deletion. Party can be an individual or an organization that has any kind of relation with the enterprise.</p>
+<h3>Resources</h3>
+<ul>
+<li>Individual</li>
+</ul>
+<p>Party API performs the following operations :</p>
+<ul>
+<li>Retrieve an individual</li>
+<li>Retrieve a collection of individuals according to given criteria</li>
+<li>Create a new individual</li>
+<li>Update an existing individual</li>
+<li>Delete an existing individual</li>
+</ul>
+</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="app-desc">BasePath:/Rain86/UserLogin2/1.0.0</div>
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Individual">Individual</a></h4>
+  <ul>
+  <li><a href="#createIndividual"><code><span class="http-method">post</span> /individual</code></a></li>
+  <li><a href="#deleteIndividual"><code><span class="http-method">delete</span> /individual/{id}</code></a></li>
+  <li><a href="#listIndividual"><code><span class="http-method">get</span> /individual</code></a></li>
+  <li><a href="#patchIndividual"><code><span class="http-method">patch</span> /individual/{id}</code></a></li>
+  <li><a href="#retrieveIndividual"><code><span class="http-method">get</span> /individual/{id}</code></a></li>
+  </ul>
+
+  <h1><a name="Individual">Individual</a></h1>
+  <div class="method"><a name="createIndividual"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /individual</code></pre></div>
+    <div class="method-summary">Creates a Individual (<span class="nickname">createIndividual</span>)</div>
+    <div class="method-notes">This operation creates a Individual entity.</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json;charset=utf-8</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">individual <a href="#Individual_Create">Individual_Create</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; The Individual to be created </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Individual">Individual</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "aristocraticTitle" : "aristocraticTitle",
+  "gender" : "gender",
+  "@baseType" : "@baseType",
+  "countryOfBirth" : "countryOfBirth",
+  "@type" : "@type",
+  "familyName" : "familyName",
+  "deathDate" : "2000-01-23T04:56:07.000+00:00",
+  "fullName" : "fullName",
+  "id" : "id",
+  "href" : "href",
+  "@schemaLocation" : "http://example.com/aeiou",
+  "birthDate" : "2000-01-23T04:56:07.000+00:00"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json;charset=utf-8</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    Created
+        <a href="#Individual">Individual</a>
+    <h4 class="field-label">400</h4>
+    Bad Request
+        <a href="#Error">Error</a>
+    <h4 class="field-label">401</h4>
+    Unauthorized
+        <a href="#Error">Error</a>
+    <h4 class="field-label">403</h4>
+    Forbidden
+        <a href="#Error">Error</a>
+    <h4 class="field-label">405</h4>
+    Method Not allowed
+        <a href="#Error">Error</a>
+    <h4 class="field-label">409</h4>
+    Conflict
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    Internal Server Error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteIndividual"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /individual/{id}</code></pre></div>
+    <div class="method-summary">Deletes a Individual (<span class="nickname">deleteIndividual</span>)</div>
+    <div class="method-notes">This operation deletes a Individual entity.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Identifier of the Individual </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json;charset=utf-8</code></li>
+    </ul>
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json;charset=utf-8</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    Deleted
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    Bad Request
+        <a href="#Error">Error</a>
+    <h4 class="field-label">401</h4>
+    Unauthorized
+        <a href="#Error">Error</a>
+    <h4 class="field-label">403</h4>
+    Forbidden
+        <a href="#Error">Error</a>
+    <h4 class="field-label">404</h4>
+    Not Found
+        <a href="#Error">Error</a>
+    <h4 class="field-label">405</h4>
+    Method Not allowed
+        <a href="#Error">Error</a>
+    <h4 class="field-label">409</h4>
+    Conflict
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    Internal Server Error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="listIndividual"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /individual</code></pre></div>
+    <div class="method-summary">List or find Individual objects (<span class="nickname">listIndividual</span>)</div>
+    <div class="method-notes">This operation list or find Individual entities</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json;charset=utf-8</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Comma-separated properties to be provided in response </div><div class="param">offset (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Requested index for start of resources to be provided in response </div><div class="param">limit (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Requested number of resources to be provided in response </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Individual">Individual</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "aristocraticTitle" : "aristocraticTitle",
+  "gender" : "gender",
+  "@baseType" : "@baseType",
+  "countryOfBirth" : "countryOfBirth",
+  "@type" : "@type",
+  "familyName" : "familyName",
+  "deathDate" : "2000-01-23T04:56:07.000+00:00",
+  "fullName" : "fullName",
+  "id" : "id",
+  "href" : "href",
+  "@schemaLocation" : "http://example.com/aeiou",
+  "birthDate" : "2000-01-23T04:56:07.000+00:00"
+}, {
+  "aristocraticTitle" : "aristocraticTitle",
+  "gender" : "gender",
+  "@baseType" : "@baseType",
+  "countryOfBirth" : "countryOfBirth",
+  "@type" : "@type",
+  "familyName" : "familyName",
+  "deathDate" : "2000-01-23T04:56:07.000+00:00",
+  "fullName" : "fullName",
+  "id" : "id",
+  "href" : "href",
+  "@schemaLocation" : "http://example.com/aeiou",
+  "birthDate" : "2000-01-23T04:56:07.000+00:00"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json;charset=utf-8</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+        
+    <h4 class="field-label">400</h4>
+    Bad Request
+        <a href="#Error">Error</a>
+    <h4 class="field-label">401</h4>
+    Unauthorized
+        <a href="#Error">Error</a>
+    <h4 class="field-label">403</h4>
+    Forbidden
+        <a href="#Error">Error</a>
+    <h4 class="field-label">404</h4>
+    Not Found
+        <a href="#Error">Error</a>
+    <h4 class="field-label">405</h4>
+    Method Not allowed
+        <a href="#Error">Error</a>
+    <h4 class="field-label">409</h4>
+    Conflict
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    Internal Server Error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="patchIndividual"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /individual/{id}</code></pre></div>
+    <div class="method-summary">Updates partially a Individual (<span class="nickname">patchIndividual</span>)</div>
+    <div class="method-notes">This operation updates partially a Individual entity.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Identifier of the Individual </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json;charset=utf-8</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">individual <a href="#Individual_Update">Individual_Update</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; The Individual to be updated </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Individual">Individual</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "aristocraticTitle" : "aristocraticTitle",
+  "gender" : "gender",
+  "@baseType" : "@baseType",
+  "countryOfBirth" : "countryOfBirth",
+  "@type" : "@type",
+  "familyName" : "familyName",
+  "deathDate" : "2000-01-23T04:56:07.000+00:00",
+  "fullName" : "fullName",
+  "id" : "id",
+  "href" : "href",
+  "@schemaLocation" : "http://example.com/aeiou",
+  "birthDate" : "2000-01-23T04:56:07.000+00:00"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json;charset=utf-8</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Updated
+        <a href="#Individual">Individual</a>
+    <h4 class="field-label">400</h4>
+    Bad Request
+        <a href="#Error">Error</a>
+    <h4 class="field-label">401</h4>
+    Unauthorized
+        <a href="#Error">Error</a>
+    <h4 class="field-label">403</h4>
+    Forbidden
+        <a href="#Error">Error</a>
+    <h4 class="field-label">404</h4>
+    Not Found
+        <a href="#Error">Error</a>
+    <h4 class="field-label">405</h4>
+    Method Not allowed
+        <a href="#Error">Error</a>
+    <h4 class="field-label">409</h4>
+    Conflict
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    Internal Server Error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="retrieveIndividual"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /individual/{id}</code></pre></div>
+    <div class="method-summary">Retrieves a Individual by ID (<span class="nickname">retrieveIndividual</span>)</div>
+    <div class="method-notes">This operation retrieves a Individual entity. Attribute selection is enabled for all first level attributes.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; Identifier of the Individual </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json;charset=utf-8</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Comma-separated properties to provide in response </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Individual">Individual</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "aristocraticTitle" : "aristocraticTitle",
+  "gender" : "gender",
+  "@baseType" : "@baseType",
+  "countryOfBirth" : "countryOfBirth",
+  "@type" : "@type",
+  "familyName" : "familyName",
+  "deathDate" : "2000-01-23T04:56:07.000+00:00",
+  "fullName" : "fullName",
+  "id" : "id",
+  "href" : "href",
+  "@schemaLocation" : "http://example.com/aeiou",
+  "birthDate" : "2000-01-23T04:56:07.000+00:00"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json;charset=utf-8</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+        <a href="#Individual">Individual</a>
+    <h4 class="field-label">400</h4>
+    Bad Request
+        <a href="#Error">Error</a>
+    <h4 class="field-label">401</h4>
+    Unauthorized
+        <a href="#Error">Error</a>
+    <h4 class="field-label">403</h4>
+    Forbidden
+        <a href="#Error">Error</a>
+    <h4 class="field-label">404</h4>
+    Not Found
+        <a href="#Error">Error</a>
+    <h4 class="field-label">405</h4>
+    Method Not allowed
+        <a href="#Error">Error</a>
+    <h4 class="field-label">409</h4>
+    Conflict
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    Internal Server Error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#Error"><code>Error</code> - </a></li>
+    <li><a href="#Individual"><code>Individual</code> - </a></li>
+    <li><a href="#Individual_Create"><code>Individual_Create</code> - </a></li>
+    <li><a href="#Individual_Update"><code>Individual_Update</code> - </a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="Error"><code>Error</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>Used when an API throws an Error, typically with a HTTP error response-code (3xx, 4xx, 5xx)</div>
+    <div class="field-items">
+      <div class="param">code </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Application relevant detail, defined in the API or a common list. </div>
+<div class="param">reason </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Explanation of the reason for the error which can be shown to a client user. </div>
+<div class="param">message (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> More details and corrective actions related to the error which can be shown to a client user. </div>
+<div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP Error code extension </div>
+<div class="param">referenceError (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URI of documentation describing the error. format: uri</div>
+<div class="param">@baseType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When sub-classing, this defines the super-class. </div>
+<div class="param">@schemaLocation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A URI to a JSON-Schema file that defines additional attributes and relationships format: uri</div>
+<div class="param">@type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When sub-classing, this defines the sub-class entity name. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Individual"><code>Individual</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>Individual represents a single human being (a man, woman or child). The individual can be a customer, an employee or any other person that the organization needs to store information about.</div>
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique identifier of the organization </div>
+<div class="param">href (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Hyperlink to access the organization </div>
+<div class="param">aristocraticTitle (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> e.g. Baron, Graf, Earl,… </div>
+<div class="param">birthDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> Birth date format: date-time</div>
+<div class="param">countryOfBirth (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Country where the individual was born </div>
+<div class="param">deathDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> Date of death format: date-time</div>
+<div class="param">familyName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Contains the non-chosen or inherited name. Also known as last name in the Western context </div>
+<div class="param">fullName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Full name flatten (first, middle, and last names) </div>
+<div class="param">gender (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Gender </div>
+<div class="param">@baseType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When sub-classing, this defines the super-class </div>
+<div class="param">@schemaLocation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A URI to a JSON-Schema file that defines additional attributes and relationships format: uri</div>
+<div class="param">@type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When sub-classing, this defines the sub-class entity name </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Individual_Create"><code>Individual_Create</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>Individual represents a single human being (a man, woman or child). The individual can be a customer, an employee or any other person that the organization needs to store information about.</div>
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique identifier of the organization </div>
+<div class="param">href (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Hyperlink to access the organization </div>
+<div class="param">aristocraticTitle (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> e.g. Baron, Graf, Earl,… </div>
+<div class="param">birthDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> Birth date format: date-time</div>
+<div class="param">countryOfBirth (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Country where the individual was born </div>
+<div class="param">deathDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> Date of death format: date-time</div>
+<div class="param">familyName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Contains the non-chosen or inherited name. Also known as last name in the Western context </div>
+<div class="param">fullName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Full name flatten (first, middle, and last names) </div>
+<div class="param">gender (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Gender </div>
+<div class="param">@baseType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When sub-classing, this defines the super-class </div>
+<div class="param">@schemaLocation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A URI to a JSON-Schema file that defines additional attributes and relationships format: uri</div>
+<div class="param">@type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When sub-classing, this defines the sub-class entity name </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Individual_Update"><code>Individual_Update</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>Individual represents a single human being (a man, woman or child). The individual can be a customer, an employee or any other person that the organization needs to store information about.</div>
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique identifier of the organization </div>
+<div class="param">href (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Hyperlink to access the organization </div>
+<div class="param">aristocraticTitle (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> e.g. Baron, Graf, Earl,… </div>
+<div class="param">birthDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> Birth date format: date-time</div>
+<div class="param">countryOfBirth (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Country where the individual was born </div>
+<div class="param">deathDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> Date of death format: date-time</div>
+<div class="param">familyName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Contains the non-chosen or inherited name. Also known as last name in the Western context </div>
+<div class="param">fullName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Full name flatten (first, middle, and last names) </div>
+<div class="param">gender (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Gender </div>
+<div class="param">@baseType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When sub-classing, this defines the super-class </div>
+<div class="param">@schemaLocation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A URI to a JSON-Schema file that defines additional attributes and relationships format: uri</div>
+<div class="param">@type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When sub-classing, this defines the sub-class entity name </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>

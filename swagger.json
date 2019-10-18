@@ -1,0 +1,586 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "The identity API provides standardized mechanism for identity management such as creation, update, retrieval, deletion. Party can be an individual or an organization that has any kind of relation with the enterprise. \n\n### Resources\n- Individual\n\nParty API performs the following operations :\n- Retrieve an individual\n- Retrieve a collection of individuals according to given criteria\n- Create a new individual\n- Update an existing individual\n- Delete an existing individual",
+    "version" : "1.0.0",
+    "title" : "Sample Indentity in Project"
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/Rain86/UserLogin2/1.0.0",
+  "tags" : [ {
+    "name" : "individual"
+  } ],
+  "schemes" : [ "https" ],
+  "consumes" : [ "application/json;charset=utf-8" ],
+  "produces" : [ "application/json;charset=utf-8" ],
+  "paths" : {
+    "/individual" : {
+      "get" : {
+        "tags" : [ "individual" ],
+        "summary" : "List or find Individual objects",
+        "description" : "This operation list or find Individual entities",
+        "operationId" : "listIndividual",
+        "parameters" : [ {
+          "name" : "fields",
+          "in" : "query",
+          "description" : "Comma-separated properties to be provided in response",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "offset",
+          "in" : "query",
+          "description" : "Requested index for start of resources to be provided in response",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "Requested number of resources to be provided in response",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "headers" : {
+              "X-Total-Count" : {
+                "type" : "integer",
+                "description" : "Total number of items matching criteria"
+              },
+              "X-Result-Count" : {
+                "type" : "integer",
+                "description" : "Actual number of items returned in the response body"
+              }
+            },
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Individual"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "405" : {
+            "description" : "Method Not allowed",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflict",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "individual" ],
+        "summary" : "Creates a Individual",
+        "description" : "This operation creates a Individual entity.",
+        "operationId" : "createIndividual",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "individual",
+          "description" : "The Individual to be created",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Individual_Create"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Created",
+            "schema" : {
+              "$ref" : "#/definitions/Individual"
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "405" : {
+            "description" : "Method Not allowed",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflict",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/individual/{id}" : {
+      "get" : {
+        "tags" : [ "individual" ],
+        "summary" : "Retrieves a Individual by ID",
+        "description" : "This operation retrieves a Individual entity. Attribute selection is enabled for all first level attributes.",
+        "operationId" : "retrieveIndividual",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Identifier of the Individual",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "fields",
+          "in" : "query",
+          "description" : "Comma-separated properties to provide in response",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Individual"
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "405" : {
+            "description" : "Method Not allowed",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflict",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "individual" ],
+        "summary" : "Deletes a Individual",
+        "description" : "This operation deletes a Individual entity.",
+        "operationId" : "deleteIndividual",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Identifier of the Individual",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Deleted"
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "405" : {
+            "description" : "Method Not allowed",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflict",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch" : {
+        "tags" : [ "individual" ],
+        "summary" : "Updates partially a Individual",
+        "description" : "This operation updates partially a Individual entity.",
+        "operationId" : "patchIndividual",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Identifier of the Individual",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "individual",
+          "description" : "The Individual to be updated",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Individual_Update"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Updated",
+            "schema" : {
+              "$ref" : "#/definitions/Individual"
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "405" : {
+            "description" : "Method Not allowed",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflict",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Individual" : {
+      "type" : "object",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Unique identifier of the organization"
+        },
+        "href" : {
+          "type" : "string",
+          "description" : "Hyperlink to access the organization"
+        },
+        "aristocraticTitle" : {
+          "type" : "string",
+          "description" : "e.g. Baron, Graf, Earl,…"
+        },
+        "birthDate" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Birth date"
+        },
+        "countryOfBirth" : {
+          "type" : "string",
+          "description" : "Country where the individual was born"
+        },
+        "deathDate" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Date of death"
+        },
+        "familyName" : {
+          "type" : "string",
+          "description" : "Contains the non-chosen or inherited name. Also known as last name in the Western context"
+        },
+        "fullName" : {
+          "type" : "string",
+          "description" : "Full name flatten (first, middle, and last names)"
+        },
+        "gender" : {
+          "type" : "string",
+          "description" : "Gender"
+        },
+        "@baseType" : {
+          "type" : "string",
+          "description" : "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation" : {
+          "type" : "string",
+          "format" : "uri",
+          "description" : "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type" : {
+          "type" : "string",
+          "description" : "When sub-classing, this defines the sub-class entity name"
+        }
+      },
+      "description" : "Individual represents a single human being (a man, woman or child). The individual can be a customer, an employee or any other person that the organization needs to store information about."
+    },
+    "Individual_Create" : {
+      "type" : "object",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Unique identifier of the organization"
+        },
+        "href" : {
+          "type" : "string",
+          "description" : "Hyperlink to access the organization"
+        },
+        "aristocraticTitle" : {
+          "type" : "string",
+          "description" : "e.g. Baron, Graf, Earl,…"
+        },
+        "birthDate" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Birth date"
+        },
+        "countryOfBirth" : {
+          "type" : "string",
+          "description" : "Country where the individual was born"
+        },
+        "deathDate" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Date of death"
+        },
+        "familyName" : {
+          "type" : "string",
+          "description" : "Contains the non-chosen or inherited name. Also known as last name in the Western context"
+        },
+        "fullName" : {
+          "type" : "string",
+          "description" : "Full name flatten (first, middle, and last names)"
+        },
+        "gender" : {
+          "type" : "string",
+          "description" : "Gender"
+        },
+        "@baseType" : {
+          "type" : "string",
+          "description" : "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation" : {
+          "type" : "string",
+          "format" : "uri",
+          "description" : "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type" : {
+          "type" : "string",
+          "description" : "When sub-classing, this defines the sub-class entity name"
+        }
+      },
+      "description" : "Individual represents a single human being (a man, woman or child). The individual can be a customer, an employee or any other person that the organization needs to store information about."
+    },
+    "Individual_Update" : {
+      "type" : "object",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Unique identifier of the organization"
+        },
+        "href" : {
+          "type" : "string",
+          "description" : "Hyperlink to access the organization"
+        },
+        "aristocraticTitle" : {
+          "type" : "string",
+          "description" : "e.g. Baron, Graf, Earl,…"
+        },
+        "birthDate" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Birth date"
+        },
+        "countryOfBirth" : {
+          "type" : "string",
+          "description" : "Country where the individual was born"
+        },
+        "deathDate" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Date of death"
+        },
+        "familyName" : {
+          "type" : "string",
+          "description" : "Contains the non-chosen or inherited name. Also known as last name in the Western context"
+        },
+        "fullName" : {
+          "type" : "string",
+          "description" : "Full name flatten (first, middle, and last names)"
+        },
+        "gender" : {
+          "type" : "string",
+          "description" : "Gender"
+        },
+        "@baseType" : {
+          "type" : "string",
+          "description" : "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation" : {
+          "type" : "string",
+          "format" : "uri",
+          "description" : "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type" : {
+          "type" : "string",
+          "description" : "When sub-classing, this defines the sub-class entity name"
+        }
+      },
+      "description" : "Individual represents a single human being (a man, woman or child). The individual can be a customer, an employee or any other person that the organization needs to store information about."
+    },
+    "Error" : {
+      "type" : "object",
+      "required" : [ "code", "reason" ],
+      "properties" : {
+        "code" : {
+          "type" : "string",
+          "description" : "Application relevant detail, defined in the API or a common list."
+        },
+        "reason" : {
+          "type" : "string",
+          "description" : "Explanation of the reason for the error which can be shown to a client user."
+        },
+        "message" : {
+          "type" : "string",
+          "description" : "More details and corrective actions related to the error which can be shown to a client user."
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "HTTP Error code extension"
+        },
+        "referenceError" : {
+          "type" : "string",
+          "format" : "uri",
+          "description" : "URI of documentation describing the error."
+        },
+        "@baseType" : {
+          "type" : "string",
+          "description" : "When sub-classing, this defines the super-class."
+        },
+        "@schemaLocation" : {
+          "type" : "string",
+          "format" : "uri",
+          "description" : "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type" : {
+          "type" : "string",
+          "description" : "When sub-classing, this defines the sub-class entity name."
+        }
+      },
+      "description" : "Used when an API throws an Error, typically with a HTTP error response-code (3xx, 4xx, 5xx)"
+    }
+  }
+}
